@@ -58,7 +58,8 @@ client_script {
 	"client/photo.lua",
 	"client/app_tchat.lua",
 	"client/bank.lua",
-	"client/twitter.lua"
+	"client/twitter.lua",
+	"client/bills_cl.lua"
 }
 
 server_script {
@@ -70,5 +71,6 @@ server_script {
 	"server/server.lua",
 
 	"server/app_tchat.lua",
-	"server/twitter.lua"
+	"server/twitter.lua",
+	"server/bills_sv.lua"
 }

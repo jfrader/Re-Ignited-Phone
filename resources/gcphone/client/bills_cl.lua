@@ -1,3 +1,19 @@
+ESX = nil
+
+Citizen.CreateThread(function()
+    while not ESX do
+        ESX = exports.es_extended:getSharedObject()
+
+        Citizen.Wait(100)
+      ESX.TriggerServerCallback('esx_billing:getBills', function(bills)
+                    for k, bill in pairs(bills) do
+                       Bills[k] = bill
+                    end
+                     SendNUIMessage({event = 'bills_bills', bills = Bills})
+        end)
+    end
+end)
+
 RegisterNetEvent("gcPhone:bills_getBilling")
 AddEventHandler("gcPhone:bills_getBilling", function(billingg)
   SendNUIMessage({event = 'bills_billingg', billingg = billingg})

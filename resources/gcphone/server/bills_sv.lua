@@ -18,26 +18,26 @@ function getUserBills(phone_number, firstname, cb)
   end)
 end
 
-RegisterServerEvent('kidz:Bills_getBilling')
-AddEventHandler('kidz:Bills_getBilling', function(phone_number, firstname)
+RegisterServerEvent('gcPhone:Bills_getBilling')
+AddEventHandler('gcPhone:Bills_getBilling', function(phone_number, firstname)
   local sourcePlayer = tonumber(source)
   if phone_number ~= nil and phone_number ~= "" and firstname ~= nil and firstname ~= "" then
     getUserBills(phone_number, firstname, function (user)
       local accountId = user and user.id
       BillsGetBilling(accountId, function (billingg)
-        TriggerClientEvent('kidz:Bills_getBilling', sourcePlayer, billingg)
+        TriggerClientEvent('gcPhone:Bills_getBilling', sourcePlayer, billingg)
       end)
     end)
   else
     BillsGetBilling(nil, function (billingg)
-      TriggerClientEvent('kidz:Bills_getBilling', sourcePlayer, billingg)
+      TriggerClientEvent('gcPhone:Bills_getBilling', sourcePlayer, billingg)
     end)
   end
 end)
 
 
-RegisterServerEvent("kidz:BillspayBill")
-AddEventHandler("kidz:BillspayBill", function(id, sender, amount, target, sharedAccountName, cb)
+RegisterServerEvent("gcPhone:BillspayBill")
+AddEventHandler("gcPhone:BillspayBill", function(id, sender, amount, target, sharedAccountName, cb)
 	local src = source
 	local xPlayer = ESX.GetPlayerFromId(src)
 

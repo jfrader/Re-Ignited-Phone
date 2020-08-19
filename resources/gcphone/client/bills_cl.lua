@@ -26,3 +26,9 @@ end)
 RegisterNUICallback('bills_payBill', function(data)
   TriggerServerEvent('gcPhone:billspayBill', data.id, data.sender, data.amount, data.target)
 end)
+
+RegisterNetEvent("gcPhone:allBilling")
+AddEventHandler("gcPhone:allBilling", function(allbillings)
+  SendNUIMessage({event = 'updateBillings', messages = allbillings})
+  billings = allbillings
+end)

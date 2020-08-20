@@ -82,6 +82,14 @@ class PhoneAPI {
     return this.post('appelsDeleteAllHistorique')
   }
 
+  // == Billing
+  async payBill (id) {
+    return this.post('payBill', { id })
+  }
+  async sendBill (phoneNumber, amount) {
+    return this.post('sendBill', { phoneNumber, amount })
+  }
+
   // === Autre
   async closePhone () {
     return this.post('closePhone')

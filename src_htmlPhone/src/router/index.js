@@ -31,6 +31,7 @@ import Bourse from '@/components/Bourse/Bourse'
 import Photo from '@/components/Photo/Photo'
 
 import App9GAG from '@/components/App9GAG'
+import Bills from '@/components/Bills/Bills'
 
 Vue.use(Router)
 
@@ -130,6 +131,10 @@ export default new Router({
       path: '/9gag',
       name: '9gag',
       component: App9GAG
+    }, {
+      path: '/bills',
+      name: 'bills.bills',
+      component: Bills
     }, {
       path: '*',
       redirect: '/'

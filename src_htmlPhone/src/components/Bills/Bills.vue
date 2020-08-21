@@ -21,15 +21,25 @@ export default {
   },
   computed: {
     ...mapGetters(['IntlString', 'bills', 'useMouse']),
-    billsList () { return this.bills.map(b => ({ ...b, display: `${b.label} $${b.amount}` })) }
+    billsList () {
+      return [
+        {
+          id: 'goToReceipts',
+          display: this.IntlString('APP_BILLS_GO_TO_RECEIPTS'),
+          icon: '/html/static/img/bills/receipt.png'
+        },
+        ...this.bills.map(b => ({ ...b, display: `${b.label} $${b.amount}` }))
+      ]
+    }
   },
   methods: {
     ...mapActions(['payBill']),
     onSelect (bill) {
+      if (bill.id === 'goToReceipts') return this.$router.push({ name: 'bills.receipts' })
       this.$router.push({ name: 'bills.bills.view', params: { id: bill.id } })
     },
     onOption (bill) {
-      if (!bill || !bill.id) return
+      if (!bill || !bill.id || bill.id === 'goToReceipts') return
       this.disableList = true
       Modal.CreateModal({
         choix: [

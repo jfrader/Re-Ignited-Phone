@@ -534,6 +534,8 @@
       "APP_DARKTCHAT_DELETE_NOTE": "Delete Note",
       "APP_BILLS_BILLS_TITLE": "Bills",
       "APP_BILLS_PAY": "Pay bill",
+      "APP_BILLS_GO_TO_RECEIPTS": "GO TO RECEIPTS",
+      "APP_BILLS_GO_TO_BILLS": "GO TO BILLS",
 
       "TIMEAGO": [
         "Just Now",

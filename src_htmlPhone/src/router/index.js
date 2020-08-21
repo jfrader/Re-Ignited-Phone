@@ -31,7 +31,9 @@ import Bourse from '@/components/Bourse/Bourse'
 import Photo from '@/components/Photo/Photo'
 
 import App9GAG from '@/components/App9GAG'
+
 import Bills from '@/components/Bills/Bills'
+import BillsReceipts from '@/components/Bills/Receipts'
 
 Vue.use(Router)
 
@@ -135,6 +137,10 @@ export default new Router({
       path: '/bills',
       name: 'bills.bills',
       component: Bills
+    }, {
+      path: '/bills/receipts',
+      name: 'bills.receipts',
+      component: BillsReceipts
     }, {
       path: '*',
       redirect: '/'

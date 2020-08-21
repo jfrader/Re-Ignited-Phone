@@ -6,7 +6,8 @@ const state = {
 }
 
 const getters = {
-  bills: ({ bills }) => bills
+  bills: ({ bills }) => bills,
+  receipts: ({ receipts }) => receipts
 }
 
 const actions = {
@@ -41,6 +42,21 @@ export default {
 if (process.env.NODE_ENV !== 'production') {
   // eslint-disable-next-line
   state.bills = [{
+    id: 2,
+    sender: '336-4557',
+    target: '336-4552',
+    label: 'Apples',
+    amount: 200
+  },
+  {
+    id: 3,
+    sender: '336-4557',
+    target: '336-4552',
+    label: 'Oranges',
+    amount: 500
+  }]
+
+  state.receipts = [{
     id: 2,
     sender: '336-4557',
     target: '336-4552',
